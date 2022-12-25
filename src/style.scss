@@ -1,0 +1,310 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+.Form-Container {
+  background-color: #A6BCFF;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .Form-Wrapper {
+    background-color: #3E3C61;
+    padding: 20px 60px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    .logo {
+      color: White;
+      font-weight: bold;
+      font-size: 24px;
+
+
+
+    }
+
+    .error {
+      color: white;
+      font-size: 16px;
+      justify-content: center;
+    }
+
+    .title {
+      color: White;
+      font-weight: 12px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font: white;
+
+      input {
+        padding: 15px;
+        background-color: white;
+        border-radius: 8px;
+        border: none;
+        width: 250px;
+        border-bottom: 1px solid;
+
+        &::placeholder {
+          font-size: 15px;
+          color: grey;
+        }
+      }
+
+      button {
+        background-color: #7745FF;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+
+        img {
+          width: 38px;
+          padding-left: 38px;
+        }
+      }
+    }
+
+    p {
+      color: white;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.Home {
+  background-color: Black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    border: 1px solid white;
+    background-repeat: 10px;
+    border-radius: 15px;
+    width: 65%;
+    height: 85%;
+    display: flex;
+    overflow: hidden;
+
+    @include tablet() {
+      width: 90%;
+    }
+  }
+
+  .Sidebar {
+    flex: 1;
+    border-right: 1px solid gray;
+    background-color: #3e3c61;
+    position: relative;
+
+    .Navbar {
+      display: flex;
+      align-items: center;
+      background-color: #2f2d52;
+      height: 50px;
+      padding: 10px;
+      justify-content: space-between;
+      color: white;
+
+      .logo {
+        font-weight: bold;
+        font-size: 20px;
+
+        @include tablet() {
+          display: none;
+        }
+      }
+
+      .user {
+        display: flex;
+        gap: 10px;
+
+        img {
+          background-color: #ddddf7;
+          max-height: 24px;
+          max-width: 24px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        button {
+          background-color: #5d5b8d;
+          color: #ddddf7;
+          font-size: 12px;
+          border: none;
+          cursor: pointer;
+          border-radius: 10px;
+
+          @include tablet() {
+            position: absolute;
+            bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .SearchForm {
+      border-bottom: 1px solid white;
+      padding: 10px;
+
+      input {
+        background-color: transparent;
+        border: none;
+        color: white;
+        outline: none;
+
+        &::placeholder {
+          color: lightgray;
+        }
+      }
+    }
+
+    .UserChat {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #2f2d52;
+
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .UserChatInfo {
+        span {
+          font-size: 16px;
+          font-weight: bold
+        }
+
+        p {
+          font-size: 14px;
+          color: lightgray;
+        }
+      }
+    }
+  }
+
+  .Chat {
+    flex: 2;
+
+    .ChatInfo {
+      height: 50px;
+      background-color: #2F2D52;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .ChatIcons {
+      display: flex;
+      gap: 18px;
+
+      img {
+        height: 23px;
+        cursor: pointer;
+      }
+    }
+
+    .Messages {
+      background-color: #2F2D52;
+      padding: 10px;
+      height: calc(100% - 160px);
+    }
+
+    .Input {
+      height: 50px;
+      background-color: #2F2D52;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        color: #2F2D52;
+        font-size: 18px;
+
+        &::placeholder {
+          color: gray;
+        }
+      }
+
+      .send {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          height: 27px;
+          cursor: pointer;
+        }
+
+        button {
+          border: none;
+          padding: 10px 15px;
+          color: white;
+          background-color: #7745ff;
+          cursor: pointer;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
+
+.messageInfo {
+  display: flex;
+  justify-content: center;
+  width: 550px;
+  height: 500px;
+}
