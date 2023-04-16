@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Add from "../img/pfp-select.png";
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
-import { auth, storage } from "../firebase";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  sendSignInLinkToEmail,
+  updateProfile,
+} from "firebase/auth";
+import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -20,24 +26,22 @@ const Register = () => {
 
       const uploadTask = uploadBytesResumable(storageRef, file);
 
-      // Register three observers:
-      // 1. 'state_changed' observer, called any time the state changes
-      // 2. Error observer, called on failure
-      // 3. Completion observer, called on successful completion
       uploadTask.on(
         (error) => {
-          // Handle unsuccessful uploads
           setErr(true);
         },
         () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL) => {
-            await updateProfile(res.user,{
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
-
-            })
+            });
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
+              displayName,
+              email,
+              photoURL: downloadURL,
+            });
           });
         }
       );
