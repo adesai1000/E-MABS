@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "e-mabs8.appspot.com",
   messagingSenderId: "754993750019",
   appId: "1:754993750019:web:3c07eb8ee4e004acf96e36",
-  measurementId: "G-LLJQ4M22JM"
+  measurementId: "G-LLJQ4M22JM",
 };
 
 export const app = initializeApp(firebaseConfig);
