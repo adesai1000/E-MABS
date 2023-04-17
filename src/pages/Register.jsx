@@ -44,7 +44,7 @@ const Register = () => {
             });
 
             //create empty user chats on firestore
-            await setDoc(doc(db, "userChats", res.user.uid), {});
+            await setDoc(doc(db, "userFiles", res.user.uid), {});
             navigate("/");
           } catch (err) {
             console.log(err);
