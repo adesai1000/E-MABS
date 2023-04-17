@@ -15,16 +15,24 @@
     @content;
   }
 }
-
+a {
+  color: white;
+}
+a:hover {
+  color: grey;
+}
+a:visited {
+  color: #0099ff;
+}
 .Form-Container {
-  background-color: #A6BCFF;
+  background-color: #a6bcff;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .Form-Wrapper {
-    background-color: #3E3C61;
+    background-color: #3e3c61;
     padding: 20px 60px;
     border-radius: 20px;
     display: flex;
@@ -36,9 +44,6 @@
       color: White;
       font-weight: bold;
       font-size: 24px;
-
-
-
     }
 
     .error {
@@ -73,7 +78,7 @@
       }
 
       button {
-        background-color: #7745FF;
+        background-color: #7745ff;
         color: white;
         padding: 10px;
         font-size: 14px;
@@ -106,7 +111,7 @@
 }
 
 .Home {
-  background-color: #A6BCFF;
+  background-color: #a6bcff;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -204,7 +209,6 @@
 
       &:hover {
         background-color: #2f2d52;
-
       }
 
       img {
@@ -217,7 +221,7 @@
       .UserChatInfo {
         span {
           font-size: 16px;
-          font-weight: bold
+          font-weight: bold;
         }
 
         p {
@@ -233,7 +237,7 @@
 
     .ChatInfo {
       height: 50px;
-      background-color: #2F2D52;
+      background-color: #2f2d52;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -254,14 +258,14 @@
     }
 
     .Messages {
-      background-color: #2F2D52;
+      background-color: #2f2d52;
       padding: 10px;
       height: calc(100% - 160px);
     }
 
     .Input {
       height: 50px;
-      background-color: #2F2D52;
+      background-color: #2f2d52;
       padding: 10px;
       display: flex;
       align-items: center;
@@ -271,7 +275,7 @@
         width: 100%;
         border: none;
         outline: none;
-        color: #2F2D52;
+        color: #2f2d52;
         font-size: 18px;
 
         &::placeholder {
