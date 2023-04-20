@@ -255,6 +255,16 @@ a:visited {
         height: 23px;
         cursor: pointer;
       }
+      
+      button {
+        background-color: #2F2D52;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
     }
 
     .Messages {
@@ -273,4 +283,11 @@ a:visited {
   padding-top: 215px;
   padding-left: 30px;
   font-size: 22px;
+}
+.img{
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  height: 50%;
+  padding-top: 10px;
 }
