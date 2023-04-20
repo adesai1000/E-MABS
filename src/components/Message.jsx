@@ -1,13 +1,13 @@
-import React from 'react'
-
+import React, { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const Message = () => {
-    return (
-        <div className='message'>
-            <div className="messageInfo">
-                <img src='https://jumpstory.com/wp-content/uploads/2020/12/image_collection-8-728x485-1.jpg' />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="message">
+      <div className="messageInfo">
+        <span>Upload your first file by clicking the upload button!</span>
+      </div>
+    </div>
+  );
+};
 
-export default Message
+export default Message;
